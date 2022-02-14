@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igodoya.dao.BoardDao">
+	
+	<select id="getBoardList" resultType="Board">
+		select * from board order by idx desc
+	</select>
+  
+  	<update id="addBoard" parameterType="map">
+  		insert into board (title, content, reg_date, views, orifile_name, file_name, file_path, member_id) values (#{title}, #{content}, #{regDate}, #{views}, #{orifileName}, #{fileName}, #{filePath}, #{memberId})
+  	</update>
+  	
+  	<select id="getBoard" resultType="Board" parameterType="int">
+  		select * from board where idx=#{idx}
+  	</select>
+  	
+  	<update id="modBoard" parameterType="map">
+  		update board SET title=#{title}, content=#{content}, reg_date=#{regDate}, orifile_name=#{orifileName}, file_name=#{fileName}, file_path=#{filePath} where idx=#{idx}
+  	</update>
+  	
+  	<delete id="delBoard" parameterType="int">
+  		delete from board where idx=#{idx}
+  	</delete> 
+  	
+  	<!-- 게시판 조회수 -->
+  	<update id="boardViews" parameterType="int">
+  		update board SET views = views+1 where idx=#{idx}
+  	</update> 	
+</mapper>

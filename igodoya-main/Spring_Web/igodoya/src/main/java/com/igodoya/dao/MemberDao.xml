@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igodoya.dao.MemberDao">
+
+  <select id="login" resultType="String" parameterType="map">
+	select grade from member where member_id=#{memberId} and member_pw=#{memberPw}
+  </select>
+
+  <update id="memberInput" parameterType="map">
+  	insert into member values(#{memberId}, #{memberPw}, #{name}, #{mobile}, #{email}, #{entryDate}, #{grade})
+  </update>	
+  
+ <select id="getMember" resultType="Member" parameterType="String">
+	select * from member where member_id=#{memberId}
+  </select>
+  
+  <select id="allMemberList" resultType="Member" >
+	select * from member
+  </select>
+ 
+   <select id="selectMemberId" resultType="String" parameterType="map" >
+	select member_id from member where name=#{name} and mobile=#{mobile}
+  </select>
+  
+</mapper>
