@@ -3,11 +3,6 @@
 # Project: Idodoya project 
 This project contains a application using Spring boot,AWS and a deep learning model to predict hair symptoms by uploading fixed hair images.
 
-This application contains: 
-    user CRUD 
-    board CRUD 
-    Product CRUD 
-    hairfile CRUD
 
 
 ## Project Structure
