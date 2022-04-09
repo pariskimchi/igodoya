@@ -19,4 +19,3 @@ Igodoya-main
 |____Spring_Web/igodoya/src			# Spring web application code
 ```
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/A1Q7Nm0FDPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
